@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
         .div1 {
           padding: 50px;
           float: right;
@@ -23,12 +22,19 @@
           float: left;
           background-color: coral; 
         }
-  
+
+        .clearfix::after {
+          content: "";
+          clear: both;
+          display: table;
+        } 
       </style>
 </head>
 <body>
+  <div class="clearfix">
     <div class="div1">Div1</div>
     <div class="div2">Div2</div>
     <div class="div3">Div3</div>
+  </div>
   </body>
 </html>
