@@ -2,7 +2,7 @@
 .icon {
   font-size: 40px;
   color: #9bc33f;
-  float: left;
+  padding-top: 10px;
 }
 
 /* Urgent/red */
@@ -45,19 +45,3 @@ body {
   background: transparent;
   padding: 40px 0;
 }
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.todo-info{
-  float: left;
-}
-
-.check{
-  float: right;
-  padding-top: 10px;
-}
-
