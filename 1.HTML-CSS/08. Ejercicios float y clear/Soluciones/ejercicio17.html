@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .cabecera1 {
+        padding: 30px;
+        background-color: lightcoral;
+      }
+      .cabecera2 {
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        background-color: lightgreen;
+      }
+      .clearfix::after {
+        content:"";
+        clear: both;
+        display: table;
+      }
+      .holaMundo1{
+        padding: 25px;
+        background-color: aqua;
+        float: right;
+      }
+      .holaMundo2{
+        padding: 25px;
+        background-color: rgb(255, 153, 0);
+        position: absolute;
+        left: 89.5%;
+        bottom: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="cabecera1 clearfix">
+      <div class="holaMundo1">Hola mundo</div>
+    </header>
+    <header class="cabecera2">
+      <div class="holaMundo2">Hola mundo</div>
+    </header>
+  </body>
+</html>

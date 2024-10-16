@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="columnas.css" />
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .cabecera{
+            background-color: grey;
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .pie{
+            background-color: grey;
+            padding: 15px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .barraLateral{
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .barraLateral div{
+            background-color: aquamarine;
+            margin: 10px;
+            padding: 10px;
+        }
+        .barraDerecha{
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="cabecera">Cabecera</header>
+    <div class="row">
+        <div class="barraLateral col-4">
+            <div>Lorem</div>
+            <div>Inpum</div>
+            <div>Dolor</div>
+            <div>Sit</div>
+        </div>
+        <div class="barraDerecha col-8">
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi voluptates ex neque placeat possimus molestias quasi doloremque provident. Nobis laborum architecto consequuntur dolores hic officia voluptate, dicta ut corporis commodi?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem qui omnis repudiandae nam provident vel voluptas asperiores ad ratione laboriosam ullam, numquam architecto id eveniet vitae illo natus veritatis impedit?</p>
+        </div>
+    </div>
+    <footer class="pie">Pie de pagina</footer>
+</body>
+</html>
