@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <link rel="stylesheet" href="columnas.css">
+    <style>
+        .col1{
+            background-color: grey;
+        }
+
+        .col2{
+            background-color: darkgray;
+        }
+
+        .col3{
+            background-color: lightgray;
+        }
+
+        .col4{
+            background-color: black;
+            color: white;
+        }
+
+
+        @media (max-width:992px){
+            .col-3{
+                width: 50%;
+            }
+        }
+
+        @media (max-width:600px){
+            .col-3{
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-3 col1">
+            <h1>Col 1</h1>
+        </div>
+        <div class="col-3 col2">
+            <h1>Col 2</h1>
+        </div>
+        <div class="col-3 col3">
+            <h1>Col 3</h1>
+        </div>
+        <div class="col-3 col4">
+            <h1>Col 4</h1>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        header{
+            background-color: black;
+        }
+
+        header div{
+            float: left;
+            padding: 15px;
+        }
+
+        header div a{
+            color: white;
+        }
+
+        @media (max-width:600px){
+            header div{
+                text-align: center;
+                float: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="clearfix">
+        <div>
+            <a href="">Link 1</a>
+        </div>
+        <div>
+            <a href="">Link 2</a>
+        </div>
+        <div>
+            <a href="">Linl 3</a>
+        </div>
+    </header>
+</body>
+</html>

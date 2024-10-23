@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="columnas.css" />
+    <style>
+    *{
+        box-sizing: border-box;
+    }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      div {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      p {
+        text-transform: none;
+        font-weight: normal;
+      }
+
+      a,
+      a:active,
+      a:visited {
+        text-decoration: none;
+        color: #88abc2;
+      }
+
+      a:hover {
+        color: #ffbe56;
+      }
+
+      .example {
+        margin-bottom: 60px;
+      }
+
+      .example img {
+        max-width: 80%;
+      }
+
+      div {
+        box-sizing: border-box;
+        padding: 20px;
+      }
+
+      .container {
+        background: #ebf7f8;
+      }
+
+      .container.index {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .header {
+        background: #ff9c56;
+      }
+
+      .logo {
+        background: #ff4d79;
+        float: right;
+      }
+
+      .navigation {
+        background: #e85f43;
+        float: left;
+      }
+
+      .sidebar {
+        background: #ffbe56;
+        height: 325px;
+      }
+
+      .main-content {
+        background: #88abc2;
+        color: #fff;
+        padding: 15px;
+      }
+
+      .sub-content {
+        background: #49708a;
+        height: 150px;
+        margin-bottom: 20px;
+      }
+
+      .sub-content-2 {
+        background: #355163;
+        height: 154px;
+      }
+
+      .footer {
+        background: #aad637;
+      }
+
+      .post {
+        background: #aad637;
+        margin-bottom: 20px;
+      }
+
+      .image {
+        background: #8eb22e;
+      }
+
+      .post_excerpt {
+        background: #708c24;
+        padding: 20px;
+        margin: 0;
+      }
+
+      .widget {
+        background: #bb326b;
+        margin: 10px;
+        width: 200px;
+        height: 200px;
+        font-size: 36px;
+        text-align: center;
+        padding-top: 75px;
+      }
+
+      .der{
+        padding-top: 0px;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container row">
+      <div class="header row">
+        <div class="logo">logo</div>
+        <div class="navigation">navigation</div>
+      </div>
+      <div class="main-content row">
+        <div class="sidebar col-4">sidebar</div>
+        <div class="col-8 der">
+            <div class="sub-content">sub content</div>
+            <div class="sub-content-2">sub content 2</div>
+        </div>
+
+      </div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>
