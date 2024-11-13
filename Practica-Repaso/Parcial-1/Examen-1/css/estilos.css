@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.lista{
+    background-color: lightgreen;
+}
+
+.lista li:nth-child(even) {
+    color: red;
+}
+
+.lista li:nth-child(odd) {
+    color: blue;
+}
+
+.tabla{
+    background-color: lightpink;
+}
+
+footer {
+    background-color: lightgray;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.f-right {
+    float: right;
+}
+
+.f-left {
+    float: left;
+}
