@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Custom propertie */
+:root{
+    --color-fondo: white;
+    --color-borde: black;
+}
+
+img{
+    max-width: 100%;
+}
+
+nav{
+    padding: 20px;
+}
+
+.logo{
+    height:30px;
+    vertical-align: middle;
+}
+
+.linkCompra{
+    float: right;
+    text-decoration: none;
+    color: black;
+    border: 1px solid var(--color-borde);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--color-fondo);
+}
+
+.linkCompra:hover{
+    transition-duration: 1s;
+    color: white;
+    background-color: black;
+}
+
+.banner{
+    position: relative;
+}
+
+main{
+    padding: 5px;
+}
+
+article{
+    border-radius: 10px;
+    padding: 5px 20px;
+}
+
+article h3{
+    margin: 10px 0px;
+}
+
+.lightblue{
+    background-color: lightblue;
+}
+
+.lightcoral{
+    background-color: lightcoral;
+}
+
+.lightcyan{
+    background-color: lightcyan;
+}
+
+.lightgoldenrodyellow{
+    background-color: lightgoldenrodyellow;
+}
+
+.textoBanner{
+    padding: 20px;
+    width: 100%;
+}
+
+@media only screen and (min-width: 900px){
+    .textoBanner {
+        position: absolute;
+        top: 20px;
+        left: calc(3% + 3rem);
+        width: 35%;
+    }
+}
