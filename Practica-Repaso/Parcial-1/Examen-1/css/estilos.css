@@ -2,10 +2,27 @@
     box-sizing: border-box;
 }
 
-body{
-    max-width: 800px;
-    margin: 0 auto;
-}
+html {
+    scroll-behavior: smooth
+  }
+
+
+header {
+    background-color: lightgray;
+    padding: 20px;
+    position: relative;
+  }
+  
+  header img {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    height: 50px;
+  }
+  
+  header span {
+    padding-left: 30px;
+  }
 
 .clearfix::after {
     content: "";
@@ -25,6 +42,11 @@ body{
     color: blue;
 }
 
+.lista li {
+    margin-bottom: 5px;
+    padding: 3px 6px;
+}
+
 .tabla{
     background-color: lightpink;
 }
@@ -42,3 +64,44 @@ footer {
 .f-left {
     float: left;
 }
+
+.tabla {
+    background-color: lightpink;
+  }
+  
+  .tabla table {
+    margin: 0 auto;
+    border: 4px dashed blue;
+  }
+  
+  .tabla th {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 20px;
+  }
+  
+  .tabla td {
+    text-align: center;
+  }
+
+@media only screen and (min-width: 900px) {
+
+    body{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    #container {
+      width: 800px;
+      margin: 0 auto;
+    }
+  
+    header img {
+      left: -17px;
+    }
+  
+    header span {
+      padding-left: 0px;
+    }
+} 
