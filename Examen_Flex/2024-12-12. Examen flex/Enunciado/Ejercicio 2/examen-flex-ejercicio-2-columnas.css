@@ -16,6 +16,18 @@
 /* TABLETS: 600-900px */
 @media only screen and (min-width: 600px) {
 
+  .izq {
+    order: 1;
+  }
+
+  .der{
+    order: 1;
+  }
+
+  .cen{
+    order: 2;
+  }
+
   .col-t-1 {
     width: 8.33%;
   }
@@ -67,6 +79,18 @@
 
 /* ESCRITORIO: 900+px */
 @media only screen and (min-width: 900px) {
+
+  .izq {
+    order: 1;
+  }
+
+  .der{
+    order: 1;
+  }
+
+  .cen{
+    order: 1;
+  }
 
   .col-e-1 {
     width: 8.33%;

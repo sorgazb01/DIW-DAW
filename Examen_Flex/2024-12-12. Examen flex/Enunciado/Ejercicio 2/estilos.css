@@ -1,5 +1,4 @@
 .contenedor-principal{
-    max-width: 800px;
     background-color: antiquewhite;
     padding: 20px;
     display: flex;
@@ -16,12 +15,9 @@
     width: 100%;
 }
 
-
-@media only screen and (max-width:600px) {
-    .der{
-        order: 1;
-    }   
-    .izq{
-        order: 2;
-    }   
+.cen{
+    height: fit-content;
 }
+
+
+

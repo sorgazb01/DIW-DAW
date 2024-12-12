@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="examen-flex-ejercicio-2-columnas.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <div class="introduccion">
+            <h3>
+                El contenedor general ocupara toda la anchura de la pantalla en todos 
+                los casos
+            </h3>
+        </div>
+        <div>
+            <div>
+                <h3>
+                    Fila 1
+                </h3>
+                <ul>
+                    <li>La zona izquierda ocupa 6 columnas para escritorio y tablets. Para moviles ocupa el 100% de la pantalla</li>
+                    <li>La zona centro ocupa 3 columnas para escritorio y solo ocupa el espacio necesario verticalmente. Para tablets y moviles ocupa el 100%</li>
+                    <li>La zona derecha ocupa 3 columnas para escritorio, 6 para tablets y el 100% para moviles. Para tablets, está situada junto a la zona izquierda</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-t-6 col-e-6 contenido izq">
+                    <p>Zona izquierda</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam vel odit voluptatem id tenetur. Nostrum iure veritatis quaerat dolorem tenetur, praesentium harum consectetur laboriosam, maxime minima quasi molestiae eum facere.</p>
+                </div>
+                <div class="col-e-3 contenido cen">
+                    <p>Zona centro</p>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="col contenido der">
+                    <p>Zona derecha</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam vel odit voluptatem id tenetur. Nostrum iure veritatis quaerat dolorem tenetur, praesentium harum consectetur laboriosam, maxime minima quasi molestiae eum facere.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3>
+                    Fila 2. Todas las zonas ocupan el mismo espacio, pero si se elimina una de ellas, la que queda se apropia del espacio que ha dejado
+                    la columna eliminada. Todas ocupan el 100% para moviles.
+                </h3>
+            </div>
+            <div>
+                <h3>Fila 2.</h3>
+                <ul>
+                    <li>La zona izquierda ocupa 7 columnas para escritorio y el 100% de la anchura disponible para tablets y moviles</li>
+                    <li>La zona centro y la zona derecha se reparten el espacio restante para escritorio. Para tablets ocupan el 50% cada una.</li>
+                    <li>Para moviles, las 3 zonas ocupan el 100% de la anchura de la pantalla</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-e-7 contenido">
+                    <p>Zona izquierda</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam assumenda magnam odio rerum explicabo, magni perspiciatis reiciendis, vel incidunt quo doloremque dolores quod nam dolorem ad molestias. Vel, dolore at.</p>
+                </div>
+                <div class="col contenido">
+                    <p>Zona Central</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quis nam dolore magnam officia ratione, aut ipsum numquam dolorem laborum ad? Cumque fuga deserunt expedita dicta quas vitae similique corrupti!</p>
+                </div>
+                <div class="col contenido">
+                    <p>Zona derecha</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit eligendi iste quas at ducimus beatae ratione adipisci harum rem, quam ullam quidem blanditiis fuga alias optio magni non possimus fugit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
