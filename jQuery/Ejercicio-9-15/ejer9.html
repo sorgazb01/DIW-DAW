@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        #ejemplo {
+          width: 200px;
+          padding: 20px;
+          border: 10px solid black;
+        }
+      </style>
+</head>
+<body>
+    <!-- 9. Crea un código jQuery en el que se muestre por consola la diferencia 
+        entre los métodos outerWidth(), innerWidth() y width() a partir del 
+        HTML/CSS siguiente: -->
+    <div id="ejemplo"></div>
+    <script>
+        $(document).ready(function () {
+            console.log($("#ejemplo").outerWidth()+" Incluye padding, border y margin");
+            console.log($("#ejemplo").innerWidth()+" Incluye padding y no border");
+            console.log($("#ejemplo").width()+" Incluye solo el ancho del contenido");
+        });
+    </script>
+</body>
+</html>

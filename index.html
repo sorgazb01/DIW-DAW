@@ -1,58 +1,48 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicio diseño con flex</title>
-  <link href="estilos-enunciado.css" rel="stylesheet" type="text/css">
+  <title>Document</title>
+  
+  <script src="jquery-3.7.1.min.js"></script>
+  <style> 
+    div { 
+      border: 1px solid black; 
+      background-color: #ccc; 
+      margin-block: 0.5em; 
+    } 
+  </style> 
 </head>
-
 <body>
-  <div id="container-ppal">
-    <div id="container-izq">
-      <div id="container-izq-1"></div>
-      <div id="container-izq-2">
-        <div id="container-izq-3"></div>
-        <div id="container-izq-4"></div>
-      </div>
-      <div id="container-izq-5">
-        <div id="container-izq-6"></div>
-        <div id="container-izq-7"></div>
-        <div id="container-izq-8"></div>
-      </div>
-    </div>
-
-    <div id="container-centro">
-      <div id="container-centro-1">
-        <div id="container-centro-4"></div>
-        <div id="container-centro-5"></div>
-        <div id="container-centro-6"></div>
-        <div id="container-centro-7"></div>
-      </div>
-      <div id="container-centro-2">
-
-      </div>
-      <div id="container-centro-3">
-        <div id="container-centro-8"></div>
-        <div id="container-centro-9"></div>
-      </div>
-    </div>
-
-    <div id="container-dcha">
-      <div id="container-dcha-1"></div>
-      <div id="container-dcha-2">
-        <div id="container-dcha-4"></div>
-        <div id="container-dcha-5">
-        </div>
-      </div>
-      <div id="container-dcha-3">
-        <div id="container-dcha-6"></div>
-        <div id="container-dcha-7"></div>
-      </div>
-    </div>
-
-  </div>
+ 
+<input type="button" value="before" id="btn-before"> 
+<input type="button" value="insertBefore" id="btn-insertBefore"> 
+<input type="button" value="prepend" id="btn-prepend"> 
+<input type="button" value="prependTo" id="btn-prependTo"> 
+ 
+<div>Div 1</div> 
+<div>Div 2</div> 
+<div>Div 3</div> 
+ 
+<script> 
+  $(document).ready(function () { 
+    $("#btn-before").on("click", function () { 
+      $("div").before("<h3>before</h3>"); 
+    }); 
+ 
+    $("#btn-insertBefore").on("click", function () { 
+      $("<h3>insertBefore</h3>").insertBefore("div"); 
+    }); 
+ 
+    $("#btn-prepend").on("click", function () { 
+      $("div").prepend("<h3>prepend</h3>"); 
+    }); 
+ 
+    $("#btn-prependTo").on("click", function () { 
+      $("<h3>prependTo</h3>").prependTo("div");; 
+    }); 
+  }); 
+</script> 
 </body>
-
 </html>

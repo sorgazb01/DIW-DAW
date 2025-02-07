@@ -1,0 +1,45 @@
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto auto; 
+  grid-template-areas: 
+    "b a" ;
+  justify-content: space-between;
+}
+
+.logo{
+  grid-area: a;
+}
+
+.navigation {
+  grid-area: b;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 25% auto;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "b a" 
+  "b c";
+  column-gap: 40px;
+}
+
+.sidebar {
+  height: 300px;
+  grid-area: b;
+}
+
+.sub-content {
+  height: 140px;
+  grid-area: a;
+}
+
+.sub-content-2 {
+  height: 150px;
+  grid-area: c;
+}

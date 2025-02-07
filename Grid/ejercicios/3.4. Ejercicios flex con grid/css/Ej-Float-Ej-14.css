@@ -1,0 +1,13 @@
+.container {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+main > * {
+  height: 300px;
+}

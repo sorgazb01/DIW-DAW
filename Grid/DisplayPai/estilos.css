@@ -1,0 +1,82 @@
+.contendor{
+    display: grid;
+    height: 400px;
+    max-width: 800px;
+    gap: 10px;
+    grid-template-rows:[linea1] 1fr [linea2] 1fr [linea3] 1fr [linea4] auto [linea5] auto [ultimaLinea];
+    grid-template-columns:[columna1] 1fr [columna2] 1fr [columna3] 1fr [columna4] 1fr [ultimaColumna];
+}
+
+.contendor div{
+    background-color: blue;
+    color: white;
+    
+}
+
+.contendor div:nth-child(1) { 
+    grid-row: linea1/linea2;
+    grid-column: columna1/columna2;
+}
+
+.contendor div:nth-child(2) { 
+    grid-row: linea2/linea3;
+    grid-column: columna2/ultimaColumna;
+}
+
+.contendor div:nth-child(3) { 
+    grid-row: linea1/linea2;
+    grid-column: columna2/columna3;
+}
+
+.contendor div:nth-child(4) { 
+    grid-row: linea3/linea4;
+    grid-column: columna1/ultimaColumna;
+}
+
+.contendor div:nth-child(5) { 
+    grid-row: linea4/linea5;
+    grid-column: columna1/ultimaColumna;
+}
+
+.contendor div:nth-child(6) { 
+    grid-row: linea5/ultimaLinea;
+    grid-column: columna1/ultimaColumna;
+}
+
+@media (min-with:600px) {
+    .contendor{
+        grid-template-rows:[Dlinea1] 1fr [Dlinea2] 1fr [Dlinea3] auto [Dlinea4] 1fr [Dlinea5] 1fr [DultimaLinea];
+        grid-template-columns:[Dcolumna1] 1fr [Dcolumna2] 1fr [DultimaColumna];
+    }
+    
+    
+    .contendor div:nth-child(1) { 
+        grid-row: Dlinea1/Dlinea2;
+        grid-column: Dcolumna1/DultimaColumna;
+    }
+    
+    .contendor div:nth-child(2) { 
+        grid-row: Dlinea2/Dlinea3;
+        grid-column: Dcolumna1/Dcolumna2;
+    }
+    
+    .contendor div:nth-child(3) { 
+        grid-row: linea1/linea2;
+        grid-column: columna2/columna3;
+    }
+    
+    .contendor div:nth-child(4) { 
+        grid-row: linea3/linea4;
+        grid-column: columna1/ultimaColumna;
+    }
+    
+    .contendor div:nth-child(5) { 
+        grid-row: linea4/linea5;
+        grid-column: columna1/ultimaColumna;
+    }
+    
+    .contendor div:nth-child(6) { 
+        grid-row: linea5/ultimaLinea;
+        grid-column: columna1/ultimaColumna;
+    }
+}

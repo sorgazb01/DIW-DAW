@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 5</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .padre div {
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .div1 {
+      background-color: aqua;
+    }
+
+    .div2 {
+      background-color: beige;
+    }
+
+    .div3 {
+      background-color: coral;
+    }
+
+    .div4 {
+      background-color: cornflowerblue;
+    }
+
+    .padre{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="padre">
+    <div class="div1">Div1</div>
+    <div class="div2">Div2</div>
+    <div class="div3">Div3</div>
+    <div class="div4">Div4</div>
+  </div>
+
+</body>
+
+</html>

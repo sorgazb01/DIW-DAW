@@ -1,0 +1,82 @@
+.conetendorCalculadora{
+    background-color: gray;
+    border: 3px solid black;
+}
+
+.container { 
+    display: grid; 
+    gap: 5px; 
+    grid-template-areas: 
+      "MC MC MR MR Mmas Mmas M- M- MS MS M M" 
+      "Porc Porc Porc CE CE CE C C C masIgual masIgual masIgual" 
+      "frac frac frac x2 x2 x2 r2 r2 r2 barra barra barra"; 
+} 
+
+.boton{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    margin: 5px;
+    text-align: center;
+}
+
+.boton:hover{
+    background-color: lightgray;
+}
+
+
+.container .boton:nth-child(1) { 
+    grid-area: MC; 
+} 
+
+.container .boton:nth-child(2) { 
+    grid-area: MR; 
+} 
+
+.container .boton:nth-child(3) { 
+    grid-area: Mmas; 
+} 
+.container .boton:nth-child(4) { 
+    grid-area: M-; 
+} 
+
+.container .boton:nth-child(5) { 
+    grid-area: MS; 
+} 
+
+.container .boton:nth-child(6) { 
+    grid-area: M; 
+} 
+
+.container .boton:nth-child(7) { 
+    grid-area: Porc; 
+} 
+
+.container .boton:nth-child(8) { 
+    grid-area: CE; 
+} 
+
+.container .boton:nth-child(9) { 
+    grid-area: C; 
+} 
+
+.container .boton:nth-child(10) { 
+    grid-area: masIgual; 
+} 
+
+.container .boton:nth-child(11) { 
+    grid-area: frac; 
+} 
+
+.container .boton:nth-child(12) { 
+    grid-area: x2; 
+} 
+
+.container .boton:nth-child(13) { 
+    grid-area: r2; 
+} 
+
+.container .boton:nth-child(14) { 
+    grid-area: barra; 
+} 

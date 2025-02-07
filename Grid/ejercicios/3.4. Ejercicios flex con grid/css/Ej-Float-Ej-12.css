@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+}
+
+main > * {
+  /* Este height claramente, está para dar altura a los elementos si no tienen contenido */
+  min-height: 300px;
+}
+
+.explanation:is(h1, h2, h3, h4, h5, div) {
+  text-transform: initial;
+  font-weight: initial;
+}

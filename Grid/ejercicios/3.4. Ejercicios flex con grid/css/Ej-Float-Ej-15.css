@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  justify-content: space-between;
+}
+
+.image-text-container {
+  display: grid;
+  grid-template-columns: 20% 70%;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.image-text-container .image {
+  height: 150px;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}

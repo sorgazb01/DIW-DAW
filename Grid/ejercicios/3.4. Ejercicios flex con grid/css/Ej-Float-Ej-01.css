@@ -1,0 +1,22 @@
+#container {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto;
+}
+
+.div1 {
+  padding: 50px;
+  background-color: pink;
+}
+
+.div2 {
+  padding: 50px;
+  background-color: aqua;
+}
+
+code {
+  font-size: 90%;
+  background-color: lightgrey;
+  padding: 2px 5px;
+  font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,34 @@
+#container {
+  display: grid;
+  grid-template-columns: 70% min-content;
+}
+
+#container-interior {
+  display: grid;
+  grid-template-rows: min-content min-content;
+  grid-template-columns: auto;
+}
+
+.divtexto {
+  background-color: coral;
+  padding-right: 50px;
+}
+
+.div1 {
+  padding: 50px;
+  background-color: pink;
+  order: 1;
+}
+
+.div2 {
+  padding: 5px;
+  background-color: aqua;
+  justify-self: flex-start;
+}
+
+code {
+  font-size: 90%;
+  background-color: lightgrey;
+  padding: 2px 5px;
+  font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+}

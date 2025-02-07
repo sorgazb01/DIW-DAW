@@ -1,0 +1,40 @@
+.conetendorCalculadora{
+    background-color: gray;
+    border: 3px solid black;
+}
+
+.botonera{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.botonera6{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+
+.botonera6 div{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    margin: 5px;
+    text-align: center;
+}
+
+.botonera6 div:hover{
+    background-color: lightgray;
+}
+
+.botonera div{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    margin: 5px;
+    text-align: center;
+}
+
+.botonera div:hover{
+    background-color: lightgray;
+}

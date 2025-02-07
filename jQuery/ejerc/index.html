@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios jQuery (I)</title>
+    <link rel="stylesheet" href="../../Utils/css/general.css">
+    <link rel="stylesheet" href="estilos_generales.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+
+    <style>
+        #container {
+            display: block !important;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        .exercise {
+            margin-block: 20px;
+        }
+
+        .exercise>p {
+            margin-bottom: 0;
+        }
+
+        /* Estilos para las soluciones */
+        .solution {
+            display: none;
+            padding: 1px;
+        }
+
+        code.hljs {
+            border-radius: 5px;
+        }
+
+        pre:has(code.hljs) {
+            margin: 0 !important;
+        }
+
+        .toggle-btn {
+            display: block;
+            margin: 0.5em 0 0.75em 0;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <hr>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <h1 id="main-title">Título principal</h1>
+    <p id="description" class="hidden">Este es un párrafo con una clase
+        oculta.</p>
+    <button id="toggle-class">Cambiar clase</button>
+    <input id="input-field" type="text" value="Texto inicial">
+    <a id="link" href="https://example.com">Ir a Example</a>
+    <button id="submit-button" disabled>Enviar</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                $("#main-title").addClass("highlight");
+            });
+        });
+    </script>
+
+    <!-- Ejercio 2 -->
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                $("#link").attr("href", "https://google.com");
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 3 -->
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                console.log($("#description").hasClass("hidden"));
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 4 -->
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                $("#main-title").html("Titulo Actualizado con jQuery");
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 5 -->
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                // $("#submit-button").prop("disabled",false);
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 6 -->
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                $("#link").removeAttr("href");
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 7 -->
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                $("#description").removeClass("hidden");
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 8 -->
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                $("#submit-button").prop("disabled",false);
+                $("#submit-button").removeProp("disabled");
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 9 -->
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                $("#toggle-class").toggleClass("highlight");
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 10 -->
+    <script>
+        $(document).ready(function () {
+            $("#toggle-class").click(function () {
+                $("#input-field").val("Cambiamos valor del input");
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 11 -->
+    <style>
+        #navbar {
+          display: flex;
+          background-color: black;
+        }
+      
+        .nav-item {
+          padding: 10px;
+          color: white;
+          text-decoration: none;
+        }
+      
+        a.nav-item:hover,
+        a.active {
+          background-color: red;
+        }
+      </style>
+      
+      <nav id="navbar">
+        <a class="nav-item active" href="#">Inicio</a>
+        <a class="nav-item" href="#">Nosotros</a>
+        <a class="nav-item" href="#">Servicios</a>
+        <a class="nav-item" href="#">Contacto</a>
+      </nav>
+
+      <script>
+        $(document).ready(function () {
+            $(".nav-item").click(function () {
+                $(".nav-item").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+      </script>
+
+    <!-- Ejercicio 5 -->
+    <!-- A partir del siguiente HTML, 
+        crea el código jQuery que haga que al pulsar 
+        el botón se habilite el input. -->
+    <button id="my-button">Botón</button>
+    <input type="text" id="my-input" disabled>
+    
+    <script>
+        $(document).ready(function () {
+            $("#my-button").click(function () {
+                $("#my-input").prop("disabled",false);
+            });
+        });
+    </script>
+
+    <!-- Ejercico 6 -->
+    <!-- A partir del siguiente formulario, 
+        crea el código jQuery para que el checkbox 
+        habilite/deshabilite el botón Enviar. -->
+    <form>
+        <label for="checkbox"> Selecciona para habilitar el botón:</label>
+        <input type="checkbox" id="checkbox">
+        <br>
+        <button id="submit-button-4" disabled>Enviar</button>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $("#checkbox").click(function () {
+                $("#submit-button-4").prop("disabled",!$("#submit-button").prop("disabled"));
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 7 -->
+    <!-- A partir del siguiente HTML en el que 
+        tenemos 3 radiobuttons con opciones de 
+        marcas de coche, cuando el usuario 
+        modifique la opción seleccionada aparecerá 
+        un mensaje indicando la opción 
+        seleccionada. -->
+    <!-- <input type="radio" id="audi" name="brand" value="Audi">
+    <label for="audi">Audi</label>
+    <input type="radio" id="mercedes" name="brand" value="Mercedes">
+    <label for="mercedes">Mercedes</label>
+    <input type="radio" id="hyundai" name="brand" value="Hyundai">
+    <label for="hyundai">Hyundai</label> -->
+    <!-- <p id="message"></p> -->
+    <br>
+    <script>
+        $(document).ready(function () {
+            $("input[name='brand']").change(function () {
+                $("#message").text("Has seleccionado: " + $("input[name='brand']:checked").val());
+            });
+        });
+    </script>
+
+    <!-- Ejercicio 8 -->
+    <input type="checkbox" id="audi" name="brand" value="Audi">
+    <label for="audi">Audi</label>
+    <input type="checkbox" id="mercedes" name="brand" value="Mercedes">
+    <label for="mercedes">Mercedes</label>
+    <input type="checkbox" id="hyundai" name="brand" value="Hyundai">
+    <label for="hyundai">Hyundai</label>
+    
+
+    <script>
+        $(document).ready(function () {
+            $("input[name='brand']").change(function () {
+                var selected = $("input[name='brand']:checked");
+                var message = "Has seleccionado: ";
+                selected.each(function () {
+                    message += $(this).val() + " ";
+                });
+                $("#message").text(message);
+            });
+        });
+    </script>
+
+    <p id="message"></p>
+</body>
+
+</html>

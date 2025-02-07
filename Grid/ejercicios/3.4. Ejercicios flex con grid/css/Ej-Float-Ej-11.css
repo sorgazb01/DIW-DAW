@@ -1,0 +1,36 @@
+.header {
+  display: grid;
+  justify-content: space-between;
+  column-gap: 40px;
+  grid-template-columns: min-content 73%;
+}
+
+.main-content {
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: 25% auto;
+  grid-template-rows: 1fr 1fr 2fr;
+  grid-template-areas: 
+  "a b" 
+  "a c"
+  "a .";
+  column-gap: 40px;
+}
+
+.sub-content-wrapper {
+  padding: 0px;
+}
+
+.sidebar {
+  height: 300px;
+  grid-area: a;
+}
+
+.sub-content {
+  
+  grid-area: b;
+}
+
+.sub-content2 {
+  grid-area: c;
+}

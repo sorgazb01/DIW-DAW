@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+                .highlight { 
+          background-color: yellow; 
+        } 
+       
+        .hidden { 
+          display: none; 
+        } 
+    </style>
+</head>
+<body>
+    <input type="button" id="mi-boton-1" value="Boton 1">
+    <input type="button" id="mi-boton-2" value="Boton 1">
+
+
+      <h1 id="main-title">Título principal</h1> 
+      <p id="description" class="hidden">Este es un párrafo con una clase 
+      oculta.</p> 
+      <button id="toggle-class">Cambiar clase</button> 
+      <input id="input-field" type="text" value="Texto inicial"> 
+      <a id="link" href="https://example.com">Ir a Example</a> 
+      <button id="submit-button" disabled>Enviar</button> 
+
+    <script>
+        $(document).ready(function () {
+
+            $("#mi-boton-1").click(function (){
+                console.log(this)
+                $(this).css("background-color", "red");
+            });
+
+            $("#mi-boton-2").click( () =>{
+                console.log(this)
+                $(this).css("background-color", "red");
+            });
+        });
+    </script>
+</body>
+</html>

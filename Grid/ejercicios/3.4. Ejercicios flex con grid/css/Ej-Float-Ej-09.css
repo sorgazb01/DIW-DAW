@@ -1,0 +1,21 @@
+#header {
+  background-color: #333;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+
+#header a.item {
+  padding: 14px 18px;
+  color: white;
+  text-decoration: none;
+}
+
+#header a.item:hover {
+  background-color: red;
+}
+
+.contenedor{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}

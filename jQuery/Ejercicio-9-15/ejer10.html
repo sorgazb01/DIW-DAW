@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!-- 10. Crea el código jQuery que compruebe si los dos campos de texto 
+        del siguiente formulario de login están vacíos. Proporciona 2 soluciones:
+
+        10.1. Si alguno lo está, mostrará un mensaje de alerta debajo del formulario
+        con un efecto slide.
+
+        10.2. Elimina el div#alert del HTML y modifica la solución anterior 
+        para que sea jQuery quien inserte el div en el DOM. -->
+    <form id="login-form">
+        <input type="text" name="username" id="username" placeholder="Nombre de Usuario">
+        <input type="password" name="password" id="password" placeholder="Contraseña">
+        <input type="submit" id="submit-btn" value="Iniciar Sesión">
+        <!-- <div id="alert"></div> -->
+    </form>
+    <script>
+        // 10.1
+        $(document).ready(function () {
+            $("#login-form").submit(function (e) {
+                e.preventDefault();
+                if ($("#username").val() == "" || $("#password").val() == "") {
+                    $("#alert").text("Por favor, rellena ambos campos").slideDown();
+                }
+            });
+        });
+        // 10.2
+        $(document).ready(function () {
+            $("#login-form").submit(function (e) {
+                e.preventDefault();
+                if ($("#username").val() == "" || $("#password").val() == "") {
+                    $("<div id='alert'>Por favor, rellena ambos campos</div>").insertAfter("#login-form").slideDown();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
