@@ -1,0 +1,148 @@
+main > div:nth-child(1) {background-color: lightcoral;} 
+main > div:nth-child(2) {background-color: lightgreen;} 
+main > div:nth-child(3) {background-color: lightblue;} 
+main > div:nth-child(4) {background-color: lightgray;} 
+main > div:nth-child(5) {background-color: lightsalmon;} 
+main > div:nth-child(6) {background-color: lightyellow;} 
+
+main > div{
+    padding: 10px;
+}
+
+@media (min-width:500px) and (max-width:900px){
+    /* main{
+        display: grid;
+        grid-template-areas: 
+        "uno dos dos"
+        "uno tres cuatro"
+        "uno cinco cuatro"
+        "uno cinco seis";
+    }
+
+    main > div:nth-child(1) {
+        grid-area: uno;
+    } 
+    
+    main > div:nth-child(2) {
+        grid-area: dos;
+    } 
+    
+    main > div:nth-child(3) {
+        grid-area: tres;
+    }
+    
+    main > div:nth-child(4) {
+        grid-area: cuatro;
+    } 
+
+    main > div:nth-child(5) {
+        grid-area: cinco;
+        align-self: start;
+    }
+     
+    main > div:nth-child(6) {
+        grid-area: seis;
+    } */
+    
+    /* Solucion columnas */
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+
+    main > div:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 5;
+    } 
+    
+    main > div:nth-child(2) {
+        grid-column-start:2;
+        grid-column-end: 4;
+
+    } 
+    
+    main > div:nth-child(3) {
+        grid-column-start:2;
+        grid-column-end: 3;
+    }
+
+    main > div:nth-child(4) {
+        grid-column-start:3;
+        grid-column-end: 4;
+        grid-row-start:2;
+        grid-row-end: 4;
+    }
+
+    main > div:nth-child(5){
+        grid-row-start: 3;
+        grid-row-end: 5;
+        align-self: start;
+    }
+}
+
+@media (min-width:900px){
+    /* main{
+        display: grid;
+        grid-template-areas: 
+        "uno dos dos"
+        "uno tres cuatro"
+        "cinco tres seis";
+    }
+
+    main > div:nth-child(1) {
+        grid-area: uno;
+    } 
+    
+    main > div:nth-child(2) {
+        grid-area: dos;
+    } 
+    
+    main > div:nth-child(3) {
+        grid-area: tres;
+        justify-self: center;
+    }
+    
+    main > div:nth-child(4) {
+        grid-area: cuatro;
+    } 
+
+    main > div:nth-child(5) {
+        grid-area: cinco;
+    }
+     
+    main > div:nth-child(6) {
+        grid-area: seis;
+    } */
+    
+    /* Solucion columnas */
+    main{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    main > div:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    } 
+    
+    main > div:nth-child(2) {
+        grid-column-start:2;
+        grid-column-end: 4;
+
+    } 
+    
+    main > div:nth-child(3) {
+        grid-column-start:2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        justify-self: center;
+    }
+}
