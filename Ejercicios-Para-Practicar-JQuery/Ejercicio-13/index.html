@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Actualizar" id="refresh">
+    <div id="respuesta"></div>
+
+<script>
+  $(document).ready(function () {
+    $("#refresh").on("click", function () {
+      $.ajax({
+        url: "coches.json",
+        type: "GET",
+        success: function (data) {
+          // Inserta aquí tu código
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
