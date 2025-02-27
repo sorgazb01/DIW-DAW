@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>2024-02-29. Examen Bootstrap + jQuery</title>
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+
+        <!-- Bootstrap JS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+        <!-- jQuery -->
+        <script src="jquery-3.7.1.min.js"></script>
+    </head>
+
+    <body>
+        <div class="m-1">
+            <h1 class="bg-danger text-white text-center p-2">Busca Casa Sergio
+                Orgaz
+                Bravo</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 p-1">
+                        <div
+                            class="border border-2 border-secondary border-opacity-25 p-3">
+                                <form action>
+                                <div id="hola" class="form-floating mb-3">
+                                        <input type="email" class="form-control " id="floatingInput" placeholder=""><label id="labelInputPoblacion" for="floatingInput">Poblacion</label>
+                                      </div>
+                                    <div class="mt-3 mb-3">
+                                        <label for="customRange1"
+                                            class="form-label">Precio maximo:
+                                            <span
+                                                class="badge text-bg-info fw-bolder ps-1 pe-1">1000€</span></label>
+                                        <input type="range" min="0" max="1000" value="1000" class="form-range"
+                                            id="customRange1">
+                                    </div>
+                                    <div class="mt-3 mb-3">
+                                        <h4 class>Habitaciones</h4>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="w-100">
+                                                    <input type="checkbox"
+                                                        class="form-check-input"
+                                                        id="exampleCheck1">
+                                                    <label
+                                                        class="form-check-label"
+                                                        for="exampleCheck1">Garaje</label>
+                                                </div>
+                                                <div class="w-100">
+                                                    <input type="checkbox"
+                                                        class="form-check-input"
+                                                        id="exampleCheck1"
+                                                        checked>
+                                                    <label
+                                                        class="form-check-label"
+                                                        for="exampleCheck1">Ascensor</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="w-100">
+                                                    <input type="checkbox"
+                                                        class="form-check-input"
+                                                        id="exampleCheck1">
+                                                    <label
+                                                        class="form-check-label"
+                                                        for="exampleCheck1">Terraza</label>
+                                                </div>
+                                                <div class="w-100">
+                                                    <input type="checkbox"
+                                                        class="form-check-input"
+                                                        id="exampleCheck1"
+                                                        checked>
+                                                    <label
+                                                        class="form-check-label"
+                                                        for="exampleCheck1">Piscina</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3 mb-3">
+                                        <h4>Equipamiento</h4>
+                                        <div class="form-check">
+                                            <input class="form-check-input"
+                                                type="radio"
+                                                name="flexRadioDefault"
+                                                id="flexRadioDefault2" checked>
+                                            <label class="form-check-label"
+                                                for="flexRadioDefault2">
+                                                Amueblado
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input"
+                                                type="radio"
+                                                name="flexRadioDefault"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label"
+                                                for="flexRadioDefault2">
+                                                No amueblado
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit"
+                                            class="btn btn-primary d-flex justify-center">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-8 p-1">
+                            <div
+                                class="border border-2 border-secondary border-opacity-25 p-3">
+                                <div class="pb-5">
+                                    Resultados:
+                                </div>
+                                <div id="resultados">
+                                    <div class="alert hide" id="alert-resultados" role="alert"></div>
+                        
+                                    <div id="viviendas"></div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            $(document).ready(function(){
+                $('#customRange1').on('input',function(){
+                    $('span').text($(this).val()+'€')
+                })
+
+                $('button').on('click',function(e){
+                    e.preventDefault()
+                    if($('#floatingInput').val()==''){
+                        console.log('error')
+                        if($('#error-message').is(':visible')){
+                            $('#error-message').hide()
+                        }
+                        $('<div id="error-message" style="color: red">Introduce una Poblacion.</div>').insertAfter($('#hola'))
+                    }else{
+                        $.ajax({
+                            url: "viviendas.json",
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.viviendas.length !== 0) {
+                                    $("#alert-resultados")
+                                    .addClass("alert-success")
+                                    .removeClass("alert-danger")
+                                    .text("Hemos encontrado las siguientes viviendas para ti:")
+                                    .slideDown();
+                                    var viviendasList = "<ol>";
+                                        $.each(data.viviendas, function (index, vivienda) {
+                                            viviendasList += "<li><strong>Dirección:</strong> " + vivienda.direccion + ", <strong>Precio:</strong> " + vivienda.precio + "</li>";
+                                        });
+                                        viviendasList += "</ol>";
+                                        $("#viviendas").html(viviendasList);
+                                    }
+                                    else {
+                                        $("#viviendas").empty();
+                                        $("#alert-resultados")
+                                        .addClass("alert-danger")
+                                        .removeClass("alert-success")
+                                        .text("Lo siento, no hemos encontrado viviendas para ti")
+                                        .slideDown();
+                                    }
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    $("#viviendas").empty();
+                                    $("#alert-resultados")
+                                    .addClass("alert-danger")
+                                    .removeClass("alert-success")
+                                    .text("Se ha producido un error en la llamada.")
+                                    .slideDown();
+                                }
+                            });
+                        }
+                    })
+                })
+                </script>
+
+    </body>
+
+</html>
