@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios jQuery 2.3</title>
+    <link rel="stylesheet" href="../css/estilos_generales.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <style>
+        .sinalt{
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://picsum.photos/id/684/600/400" width="200" alt="imgAlt">
+    <img src="https://picsum.photos/id/684/600/400" width="200" alt="">
+    <img src="https://picsum.photos/id/684/600/400" width="200">
+    <script>
+        // Crea el código jQuery que ponga la clase sinalt a todas las 
+        // imágenes que no tengan el atributo alt o lo tengan vacío.
+        $(document).ready(function () {
+            $('img').each(function(){
+                if(!$(this).attr('alt') || $(this).attr("alt").trim() === ""){
+                    $(this).addClass('sinalt')
+                }
+            })
+        });
+    </script>
+</body>
+</html>

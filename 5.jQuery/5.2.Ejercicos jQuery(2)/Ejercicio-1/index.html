@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicos jQuery 2.1</title>
+    <link rel="stylesheet" href="../css/estilos_generales.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <textarea id="text-area"></textarea>
+    <span id="contador"></span>
+    
+    <script>
+        // Crea el código HTML y jQuery de un textarea y un contador de caracteres. 
+        // Cuando el usuario escriba en el textarea se actualizará un contador del número 
+        // de caracteres que tiene el textarea. Ese contador se mostrará al usuario justo debajo del textarea.
+        $(document).ready(function () {
+            let contador = 0
+            $('#text-area').on('input',function () {
+                contador = $(this).val().length
+                $('#contador').html('El numero de caracteres del text area es:'+contador)
+            })
+        });
+    </script>
+</body>
+</html>
