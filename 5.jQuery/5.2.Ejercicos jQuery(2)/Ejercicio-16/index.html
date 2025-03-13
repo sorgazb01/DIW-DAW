@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 2.16</title>
+    <link rel="stylesheet" href="../css/estilos_generales.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <style>
+        header {
+          background-color: lightblue;
+          height: 100px;
+        }
+      
+        main {
+          display: grid;
+          grid-template-columns: 1fr minmax(200px, auto);
+        }
+      
+        section {
+          background-color: lightcoral;
+          min-height: 200px;
+        }
+      
+        aside#res {
+          background-color: lightgoldenrodyellow;
+        }
+      
+        footer {
+          background-color: lightgreen;
+          height: 100px;
+        }
+      </style>
+</head>
+<body>
+      <header>header</header>
+      <main>
+        <section>section</section>
+        <aside id="res">aside</aside>
+      </main>
+      <footer>footer</footer>
+      
+      <script>
+        // Dado el siguiente HTML/CSS, diseña el código jQuery para que se cargue asíncronamente con load() 
+        // en el aside#res un HTML externo con resultados deportivos. 
+        // Esta carga externa se producirá al cargar la página principal y 
+        // posteriormente cada 5 segundos (usa setInterval). 
+        // Cada vez que se produzca esta carga externa el aside hará un breve efecto de desaparecer y 
+        // aparecer de nuevo para indicar al usuario la actualización. Además, si se produce un error en la carga,
+        // se mostrará en el aside un mensaje de error.
+
+        $(document).ready(function () {
+            $('#res').load('resultados.html',function(stresponse, status, xhratus){
+                if(status == 'error'){
+                    console.log(status)
+                    $('#res').text('Ha ocurrido un error al cargar los resultados')
+                }else{
+                    setInterval(() => {
+                    $('#res').load('resultados.html',function(response, status, xhr){
+                        if(status == 'error'){
+                            $('#res').text('Ha ocurrido un error al cargar los resultados')
+                            $('#res').fadeOut(500).fadeIn(500);
+                        }else{
+                            $('#res p').fadeOut(500).fadeIn(500);
+                        }
+                    })
+                }, 5000);
+                }
+            })
+        });
+      </script>
+</body>
+</html>

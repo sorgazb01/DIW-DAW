@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio jQuery 2.8</title>
+    <link rel="stylesheet" href="../css/estilos_generales.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="checkbox" id="audi" name="brand" value="Audi">
+    <label for="audi">Audi</label>
+
+    <input type="checkbox" id="mercedes" name="brand" value="Mercedes">
+    <label for="mercedes">Mercedes</label>
+
+    <input type="checkbox" id="hyundai" name="brand" value="Hyundai">
+    <label for="hyundai">Hyundai</label>
+
+    <p id="message"></p>
+
+    <script>
+        // A partir del siguiente HTML en el que tenemos 3 checkboxes con marcas de coche, 
+        // cuando el usuario marque o desmarque un checkbox aparecerá un mensaje indicando 
+        // la opción u opciones seleccionadas. Si no ha seleccionado ninguna, 
+        // también saldrá el mensaje indicándolo.
+        $(document).ready(function () {
+            $("input[name=brand]").on("change", function () {
+            let texto = "Opciones seleccionadas: ";
+            let $cb_checked = $("input[name=brand]:checked");
+            let $mensaje = $("#message");
+
+            if ($cb_checked.length) {
+                $cb_checked.each(function () {
+                texto += $(this).val() + " ";
+            });
+            $("#message").text(texto);
+            }
+            else {
+                $("#message").text("No has seleccionado ninguna opción.");
+            }
+      });
+    });
+    </script>
+</body>
+</html>

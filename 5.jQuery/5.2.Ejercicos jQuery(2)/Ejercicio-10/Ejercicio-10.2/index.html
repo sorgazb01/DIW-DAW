@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio jQuery 2.10.2</title>
+    <link rel="stylesheet" href="../../css/estilos_generales.css">
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <form id="login-form">
+        <input type="text" name="username" id="username" placeholder="Nombre de Usuario">
+        <input type="password" name="password" id="password" placeholder="Contraseña">
+        <input type="submit" id="submit-btn" value="Iniciar Sesión">
+    </form>
+
+    <script>
+    $(document).ready(function () {
+        let formularioVacio = false
+
+        // Oculta el mensaje de alerta si estaba visible
+        $("#alert").hide();
+
+        $('#submit-btn').on('click', function(e){
+                if($('#username').val() == "" && $('#password').val()  == ""){
+                    formularioVacio = true
+                }                
+                e.preventDefault();
+                if(formularioVacio == true){
+                    if ($("#alert").length === 0) {
+            $("<div>")
+              .text("Por favor, ingrese un usuario y una contraseña")
+              .attr("id", "alert")
+              .hide() // .hide() y .css("display", "none") hacen lo mismo
+              .insertAfter("#login-form");
+          }
+          $("#alert").slideDown();
+                } 
+            })
+    });
+    </script>
+</body>
+</html>

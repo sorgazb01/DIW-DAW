@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio jQuery 2.10.1</title>
+    <link rel="stylesheet" href="../../css/estilos_generales.css">
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <form id="login-form">
+        <input type="text" name="username" id="username" placeholder="Nombre de Usuario">
+        <input type="password" name="password" id="password" placeholder="Contraseña">
+        <input type="submit" id="submit-btn" value="Iniciar Sesión">
+        
+        <div id="alert"></div>
+    </form>
+
+    <script>
+        // Crea el código jQuery que compruebe si los dos campos de texto del siguiente 
+        // formulario de login están vacíos. Proporciona 2 soluciones:
+        // 10.1. Si alguno lo está, mostrará un mensaje de alerta debajo del formulario con un efecto slide.
+
+        $(document).ready(function () {
+            let formularioVacio = false
+            $("#alert").hide();
+            
+            $('#submit-btn').on('click', function(e){
+                if($('#username').val() == "" && $('#password').val()  == ""){
+                    formularioVacio = true
+                }                
+                e.preventDefault();
+                if(formularioVacio == true){
+                    $('#alert').text('No has introducido los campos').slideDown()
+                } 
+            })
+        });
+    </script>
+</body>
+</html>

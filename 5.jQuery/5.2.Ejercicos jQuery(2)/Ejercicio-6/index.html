@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios jQuery 2.6</title>
+    <link rel="stylesheet" href="../css/estilos_generales.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <form>
+        <label for="checkbox"> Selecciona para habilitar el botón:</label>
+        <input type="checkbox" id="checkbox">
+        <br>
+        <button id="submit-button" disabled>Enviar</button>
+    </form>
+
+    <script>
+        // A partir del siguiente formulario, crea el código jQuery para que el checkbox habilite/deshabilite el botón Enviar.
+        $(document).ready(function () {
+            $('#checkbox').on('change',function(){
+                if($(this).is(":checked")){
+                    $('#submit-button').prop('disabled',false)
+                }else{
+                    $('#submit-button').prop('disabled',true)
+                }
+            })
+        });
+    </script>
+</body>
+</html>
